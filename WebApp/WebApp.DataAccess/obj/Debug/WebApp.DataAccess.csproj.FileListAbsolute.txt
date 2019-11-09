@@ -1,0 +1,13 @@
+D:\FirstProject\backend\WebApp\WebApp.DataAccess\obj\Debug\WebApp.DataAccess.csproj.CoreCompileInputs.cache
+D:\FirstProject\backend\WebApp\WebApp.DataAccess\bin\Debug\WebApp.DataAccess.dll.config
+D:\FirstProject\backend\WebApp\WebApp.DataAccess\bin\Debug\WebApp.DataAccess.dll
+D:\FirstProject\backend\WebApp\WebApp.DataAccess\bin\Debug\WebApp.DataAccess.pdb
+D:\FirstProject\backend\WebApp\WebApp.DataAccess\bin\Debug\EntityFramework.dll
+D:\FirstProject\backend\WebApp\WebApp.DataAccess\bin\Debug\EntityFramework.SqlServer.dll
+D:\FirstProject\backend\WebApp\WebApp.DataAccess\bin\Debug\Microsoft.IdentityModel.Protocols.dll
+D:\FirstProject\backend\WebApp\WebApp.DataAccess\bin\Debug\EntityFramework.xml
+D:\FirstProject\backend\WebApp\WebApp.DataAccess\bin\Debug\EntityFramework.SqlServer.xml
+D:\FirstProject\backend\WebApp\WebApp.DataAccess\bin\Debug\Microsoft.IdentityModel.Protocols.xml
+D:\FirstProject\backend\WebApp\WebApp.DataAccess\obj\Debug\WebApp.DataAccess.csproj.CopyComplete
+D:\FirstProject\backend\WebApp\WebApp.DataAccess\obj\Debug\WebApp.DataAccess.dll
+D:\FirstProject\backend\WebApp\WebApp.DataAccess\obj\Debug\WebApp.DataAccess.pdb
