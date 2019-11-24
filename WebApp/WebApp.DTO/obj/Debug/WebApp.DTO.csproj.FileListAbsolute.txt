@@ -1,6 +1,0 @@
-D:\FirstProject\backend\WebApp\WebApp.DTO\bin\Debug\WebApp.DTO.dll
-D:\FirstProject\backend\WebApp\WebApp.DTO\bin\Debug\WebApp.DTO.pdb
-D:\FirstProject\backend\WebApp\WebApp.DTO\obj\Debug\WebApp.DTO.csprojAssemblyReference.cache
-D:\FirstProject\backend\WebApp\WebApp.DTO\obj\Debug\WebApp.DTO.csproj.CoreCompileInputs.cache
-D:\FirstProject\backend\WebApp\WebApp.DTO\obj\Debug\WebApp.DTO.dll
-D:\FirstProject\backend\WebApp\WebApp.DTO\obj\Debug\WebApp.DTO.pdb

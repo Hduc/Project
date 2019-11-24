@@ -1,67 +1,88 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using WebApp.DataAccess;
+using WebApp.Business.RepositoryBase;
+using System.Threading.Tasks;
+using RefactorThis.GraphDiff;
+using System.Linq;
+using System.Linq.Expressions;
+using System.Threading;
 
 namespace WebApp.Business
 {
-    public class ProductBusiness:IProductBusiness
+    public class ProductBusiness : IProductBusiness
     {
         #region Attributes
         private readonly IUnitOfWork _unitOfWork;
-        private readonly IRepository<Product> _repository;
+        private readonly IProductReponsitory _productReponsitory;
+        private readonly IDbContextScopeFactory _dbContextScopeFactory;
 
         #endregion
-        #region Constructors
-        public ProductBusiness(IUnitOfWork unitOfWork)
+        public ProductBusiness(IDbContextScopeFactory dbContextScopeFactory,
+            IUnitOfWork unitOfWork,
+            IProductReponsitory productReponsitory)
         {
-            this._unitOfWork = unitOfWork;
+            _dbContextScopeFactory = dbContextScopeFactory;
+            _unitOfWork = unitOfWork;
+            _productReponsitory = productReponsitory;
         }
 
-        #endregion
-        #region Add/Update/Delete/Select/Count
-        public void Add(Product item)
+        public void Add(Product entity)
         {
-            this._repository.Add(item);
+            throw new NotImplementedException();
         }
-        public void Update(Product item)
+
+        public Task<int> CountAsync(CancellationToken cancellationToken = default)
         {
-            this._repository.Update(item);
+            throw new NotImplementedException();
         }
-        public void Delete(Product item)
+
+        public Task<int> CountAsync(Expression<Func<Product, bool>> predicate, CancellationToken cancellationToken = default)
         {
-            this._repository.Delete(item);
+            throw new NotImplementedException();
         }
-        public void Delete(object id)
+
+        public void Delete(Product entity)
         {
-            var dbContext = this._unitOfWork.GetContext<DBContext>();
-            dbContext.Database.ExecuteSqlCommand(
-               string.Format(@"
-                DELETE Product
-                WHERE ID = '{0}'", id), new object[] { });
+            throw new NotImplementedException();
         }
-        public Product GetByID(object id)
+
+        public void Delete(Product entity, Expression<Func<IUpdateConfiguration<Product>, object>> expression, Func<Product, bool> predicate = null)
         {
-            return this._repository.GetByID(id);
+            throw new NotImplementedException();
         }
-        public IQueryable<Product> GetAll()
+
+        public Task<Product> FindAsync(Expression<Func<Product, bool>> predicate, IncludingQuery<Product> includingQuery = null, CancellationToken cancellationToken = default)
         {
-            return this._repository.GetQueryable();
+            throw new NotImplementedException();
         }
-        public void AddRange(IEnumerable<Product> products)
+
+        public async Task<List<Product>> GetAll()
         {
-            _unitOfWork.BeginTransaction();
-            foreach (var product in products)
+            using (_dbContextScopeFactory.Create())
             {
-                _repository.Add(product);
+                return await _productReponsitory.GetAll();
             }
-            _unitOfWork.Commit();
         }
-        public int Count()
-        {
-            return _repository.Count();
-        }
-        #endregion
 
+        public Task<IReadOnlyList<Product>> GetAsync(Expression<Func<Product, bool>> predicate, IncludingQuery<Product> includingQuery = null, OrderingQuery<Product> orderingQuery = null, PagingQuery pagingQuery = null, CancellationToken cancellationToken = default)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Modify(Product entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Modify(Product entity, Expression<Func<IUpdateConfiguration<Product>, object>> expression, bool allowDelete = false)
+        {
+            throw new NotImplementedException();
+        }
+
+        IQueryable<TProject> IRepository<Product>.Query<TProject>()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

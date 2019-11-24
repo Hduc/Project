@@ -11,3 +11,15 @@ D:\FirstProject\backend\WebApp\WebApp.DataAccess\bin\Debug\Microsoft.IdentityMod
 D:\FirstProject\backend\WebApp\WebApp.DataAccess\obj\Debug\WebApp.DataAccess.csproj.CopyComplete
 D:\FirstProject\backend\WebApp\WebApp.DataAccess\obj\Debug\WebApp.DataAccess.dll
 D:\FirstProject\backend\WebApp\WebApp.DataAccess\obj\Debug\WebApp.DataAccess.pdb
+D:\FirstProject\Project\WebApp\WebApp.DataAccess\bin\Debug\WebApp.DataAccess.dll.config
+D:\FirstProject\Project\WebApp\WebApp.DataAccess\bin\Debug\WebApp.DataAccess.dll
+D:\FirstProject\Project\WebApp\WebApp.DataAccess\bin\Debug\WebApp.DataAccess.pdb
+D:\FirstProject\Project\WebApp\WebApp.DataAccess\bin\Debug\EntityFramework.dll
+D:\FirstProject\Project\WebApp\WebApp.DataAccess\bin\Debug\EntityFramework.SqlServer.dll
+D:\FirstProject\Project\WebApp\WebApp.DataAccess\bin\Debug\Microsoft.IdentityModel.Protocols.dll
+D:\FirstProject\Project\WebApp\WebApp.DataAccess\bin\Debug\EntityFramework.xml
+D:\FirstProject\Project\WebApp\WebApp.DataAccess\bin\Debug\EntityFramework.SqlServer.xml
+D:\FirstProject\Project\WebApp\WebApp.DataAccess\bin\Debug\Microsoft.IdentityModel.Protocols.xml
+D:\FirstProject\Project\WebApp\WebApp.DataAccess\obj\Debug\WebApp.DataAccess.csproj.CopyComplete
+D:\FirstProject\Project\WebApp\WebApp.DataAccess\obj\Debug\WebApp.DataAccess.dll
+D:\FirstProject\Project\WebApp\WebApp.DataAccess\obj\Debug\WebApp.DataAccess.pdb
