@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Data.Entity;
-using System.Data.Entity.Infrastructure;
 
 namespace WebApp.DataAccess
 {
@@ -9,14 +8,14 @@ namespace WebApp.DataAccess
         public WebAppContext()
             : base("name=WebAppContext")
         {
+            // when loading entity, you should you Include method for every navigation properties you need
+            Configuration.LazyLoadingEnabled = false;
+            // we do not use lazy load, so proxy creation not necessary anymore
+            Configuration.ProxyCreationEnabled = false;
         }
 
-        public DbSet<Product> Product { get; set; }
-        public DbSet<ProductCategory> ProductCategory { get; set; }
+        public virtual DbSet<Product> Product { get; set; }
+        public virtual DbSet<ProductCategory> ProductCategory { get; set; }
 
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        {
-            throw new UnintentionalCodeFirstException();
-        }
     }
 }

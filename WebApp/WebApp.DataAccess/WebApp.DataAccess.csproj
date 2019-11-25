@@ -52,6 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="WebAppContext\Attachment.cs" />
     <Compile Include="WebAppContext\WebAppContext.cs" />
     <Compile Include="WebAppContext\Product.cs" />
     <Compile Include="WebAppContext\ProductCategory.cs" />

@@ -23,3 +23,4 @@ D:\FirstProject\Project\WebApp\WebApp.DataAccess\bin\Debug\Microsoft.IdentityMod
 D:\FirstProject\Project\WebApp\WebApp.DataAccess\obj\Debug\WebApp.DataAccess.csproj.CopyComplete
 D:\FirstProject\Project\WebApp\WebApp.DataAccess\obj\Debug\WebApp.DataAccess.dll
 D:\FirstProject\Project\WebApp\WebApp.DataAccess\obj\Debug\WebApp.DataAccess.pdb
+D:\FirstProject\Project\WebApp\WebApp.DataAccess\obj\Debug\WebApp.DataAccess.csprojAssemblyReference.cache

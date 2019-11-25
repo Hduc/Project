@@ -11,13 +11,12 @@ namespace WebApp.Web
     {
         public static void RegisterMapping()
         {
-            var config = new MapperConfiguration(cfg =>
+            AutoMapper.Mapper.Initialize(cfg =>
             {
                 // cfg.AddProfile<DepartmentProfile>();
                 // cfg.AddProfile<DepartmentTypeProfile>();
 
             });
-            var mapper = config.CreateMapper();
         }
 
     }

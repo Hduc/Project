@@ -13,6 +13,7 @@ using Unity.log4net;
 using Unity.Lifetime;
 using Unity.RegistrationByConvention;
 using WebApp.Business.RepositoryBase;
+using WebApp.Business;
 using WebApp.DataAccess;
 using AutoMapper;
 
@@ -27,18 +28,25 @@ namespace WebApp.Web.IoC
 
             // special case for factory method
             container.RegisterType<IDbContextFactory, DefaultDbContextFactory>(new PerResolveLifetimeManager());
-
+            
             // register all your components with the container
             // it is NOT necessary to register controllers here
             // prefer using conventions as much as possible
-            var taskTypes = AllClasses
+            var types = AllClasses
                 .FromLoadedAssemblies()
                 .Where(predicate => predicate.Namespace != null
-                                    && (predicate.Namespace.StartsWith("WebApp"))
+                                    && predicate.Namespace.StartsWith("WebApp")
+                                    && !predicate.Namespace.Contains("Framework")
                                     &&  !predicate.AssemblyQualifiedName.Contains(
-                                        "WebApp.Business"))
+                                        "WebApp.Business")
+                                    && !typeof(Controller).IsAssignableFrom(predicate)
+                                    && !predicate.IsAbstract
+                                    && !predicate.IsInterface)
                 .ToList();
 
+            var taskTypes = types
+                .Where(predicate =>  typeof(IUnityDependencyResolver).IsAssignableFrom(predicate))
+                .ToList();
             #region HOOK REGISTERED TASKS INTO GLOBAL EVENTS
 
             container.RegisterTypes(taskTypes,
@@ -50,7 +58,7 @@ namespace WebApp.Web.IoC
 
             #region HEADER INTERFACES AND CONCRETES IMPLEMENT
 
-            container.RegisterTypes(taskTypes,
+            container.RegisterTypes(types,
                 WithMappings.FromMatchingInterface,
                 WithName.Default,
                 WithLifetime.PerResolve);
@@ -59,7 +67,7 @@ namespace WebApp.Web.IoC
 
             #region AUTOMAPPER
 
-            MappingRegistration(container, taskTypes);
+            MappingRegistration(container, types);
 
             #endregion
 
@@ -71,7 +79,6 @@ namespace WebApp.Web.IoC
             // so we must do this manualy
             // need another solution here, this line should be DELETE
             container.RegisterType<WebAppContext, WebAppContext>(new PerRequestLifetimeManager());
-
             return container;
         }
 

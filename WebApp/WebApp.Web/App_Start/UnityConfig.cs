@@ -8,21 +8,7 @@ namespace WebApp.Web
     /// </summary>
     public static class UnityConfig
     {
-        #region Unity Container
-        private static Lazy<IUnityContainer> container =
-          new Lazy<IUnityContainer>(() =>
-          {
-              var container = new UnityContainer();
-              RegisterTypes(container);
-              return container;
-          });
-
-        /// <summary>
-        /// Configured Unity Container.
-        /// </summary>
-        public static IUnityContainer Container => container.Value;
-        #endregion
-
+        
         /// <summary>
         /// Registers the type mappings with the Unity container.
         /// </summary>
@@ -41,12 +27,21 @@ namespace WebApp.Web
 
             foreach (var task in container.ResolveAll<IUnityDependencyResolver>())
                 task.ResolveDependency(container);
-            // NOTE: To load from web.config uncomment the line below.
-            // Make sure to add a Unity.Configuration to the using statements.
-            // container.LoadConfiguration();
-
-            // TODO: Register your type's mappings here.
-            // container.RegisterType<IProductRepository, ProductRepository>();
         }
+        #region Unity Container
+
+        private static readonly Lazy<IUnityContainer> LazyContainer = new Lazy<IUnityContainer>(() =>
+        {
+            var container = new UnityContainer();
+            RegisterTypes(container);
+            return container;
+        });
+
+        /// <summary>
+        ///     Configured Unity Container.
+        /// </summary>
+        public static IUnityContainer Container => LazyContainer.Value;
+
+        #endregion
     }
 }
