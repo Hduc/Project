@@ -279,6 +279,9 @@
     <Reference Include="Unity.Mvc, Version=5.0.13.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
       <HintPath>..\..\..\backend\WebApp\packages\Unity.Mvc.5.0.13\lib\net46\Unity.Mvc.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Mvc5, Version=1.3.0.0, Culture=neutral, PublicKeyToken=43da31bc42a85347, processorArchitecture=MSIL">
+      <HintPath>..\..\..\backend\WebApp\packages\Unity.Mvc5.1.3.0\lib\net45\Unity.Mvc5.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.RegistrationByConvention, Version=2.1.5.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
       <HintPath>..\..\..\backend\WebApp\packages\Unity.5.8.4\lib\net46\Unity.RegistrationByConvention.dll</HintPath>
     </Reference>
@@ -326,6 +329,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="IoC\Core\IExecuteOnBeginRequest.cs" />
+    <Compile Include="IoC\Core\IExecuteOnEndRequest.cs" />
+    <Compile Include="IoC\Core\IExecuteOnError.cs" />
+    <Compile Include="IoC\Core\IExecuteOnStart.cs" />
     <Compile Include="IoC\IUnityDependencyResolver.cs" />
     <Compile Include="IoC\UnityDependencyResolver.cs" />
     <Compile Include="IoC\UnityHelper.cs" />

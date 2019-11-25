@@ -28,7 +28,7 @@ namespace WebApp.Web.IoC
 
             // special case for factory method
             container.RegisterType<IDbContextFactory, DefaultDbContextFactory>(new PerResolveLifetimeManager());
-            
+
             // register all your components with the container
             // it is NOT necessary to register controllers here
             // prefer using conventions as much as possible
@@ -37,7 +37,7 @@ namespace WebApp.Web.IoC
                 .Where(predicate => predicate.Namespace != null
                                     && predicate.Namespace.StartsWith("WebApp")
                                     && !predicate.Namespace.Contains("Framework")
-                                    &&  !predicate.AssemblyQualifiedName.Contains(
+                                    && !predicate.AssemblyQualifiedName.Contains(
                                         "WebApp.Business")
                                     && !typeof(Controller).IsAssignableFrom(predicate)
                                     && !predicate.IsAbstract
@@ -45,11 +45,14 @@ namespace WebApp.Web.IoC
                 .ToList();
 
             var taskTypes = types
-                .Where(predicate =>  typeof(IUnityDependencyResolver).IsAssignableFrom(predicate))
+                .Where(predicate => typeof(IUnityDependencyResolver).IsAssignableFrom(predicate)
+                                    || typeof(IExecuteOnError).IsAssignableFrom(predicate)
+                                    || typeof(IExecuteOnBeginRequest).IsAssignableFrom(predicate)
+                                    || typeof(IExecuteOnEndRequest).IsAssignableFrom(predicate))
                 .ToList();
             #region HOOK REGISTERED TASKS INTO GLOBAL EVENTS
 
-            container.RegisterTypes(taskTypes,
+            container.RegisterTypes(types,
                 WithMappings.FromAllInterfaces,
                 WithName.TypeName,
                 WithLifetime.Transient);

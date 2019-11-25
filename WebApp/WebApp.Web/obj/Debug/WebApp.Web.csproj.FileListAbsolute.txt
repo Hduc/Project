@@ -278,3 +278,4 @@ D:\FirstProject\Project\WebApp\WebApp.Web\bin\AutoMapper.EF6.dll
 D:\FirstProject\Project\WebApp\WebApp.Web\bin\DelegateDecompiler.dll
 D:\FirstProject\Project\WebApp\WebApp.Web\bin\DelegateDecompiler.EntityFramework.dll
 D:\FirstProject\Project\WebApp\WebApp.Web\bin\Mono.Reflection.dll
+D:\FirstProject\Project\WebApp\WebApp.Web\bin\Unity.Mvc5.dll
